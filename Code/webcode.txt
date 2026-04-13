@@ -1,0 +1,181 @@
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customized Home Décor</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand">Home Décor</a>
+        <a href="login.html" class="btn btn-light">Login</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="container text-center mt-5">
+    <h1 class="fade-in">Customized Home Décor Ideas</h1>
+    <p>Design your dream space with personalized recommendations</p>
+    <button class="btn btn-primary" id="startBtn">Get Started</button>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+dashboard.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <h1 class="text-center">Your Personalized Décor</h1>
+
+    <div class="row mt-4">
+
+        <div class="col-md-4">
+            <div class="card decor-card">
+                <img src="images/img1.webp" class="card-img-top">
+                <div class="card-body">
+                    <h5>Modern Living Room</h5>
+                    <button class="btn btn-primary viewBtn">View</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card decor-card">
+                <img src="images/images.jpeg" class="card-img-top">
+                <div class="card-body">
+                    <h5>Cozy Bedroom</h5>
+                    <button class="btn btn-primary viewBtn">View</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card decor-card">
+                <img src="images/image.jpeg" class="card-img-top">
+                <div class="card-body">
+                    <h5>Luxury Style</h5>
+                    <button class="btn btn-primary viewBtn">View</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+login.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="card p-4">
+        <h2 class="text-center">Login</h2>
+
+        <input type="email" id="email" class="form-control mt-3" placeholder="Email">
+        <input type="password" id="password" class="form-control mt-3" placeholder="Password">
+
+        <button class="btn btn-success mt-3" id="loginBtn">Login</button>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+css/style.css
+body {
+    background-color: #f5f5f5;
+    font-family: 'Arial';
+}
+
+h1 {
+    color: #6D4C41;
+}
+
+.fade-in {
+    display: none;
+}
+
+.decor-card {
+    transition: transform 0.3s;
+}
+
+.decor-card:hover {
+    transform: scale(1.05);
+}
+img{
+    width: 30%;
+    height: 300px;
+}
+
+js/script.js
+$(document).ready(function(){
+
+    // Fade animation
+    $(".fade-in").fadeIn(2000);
+
+    // Get Started button
+    $("#startBtn").click(function(){
+        window.location.href = "login.html";
+    });
+
+    // Login validation
+    $("#loginBtn").click(function(){
+        let email = $("#email").val();
+        let password = $("#password").val();
+
+        if(email === "" || password === ""){
+            alert("Please fill all fields");
+        } else {
+            alert("Login Successful!");
+            window.location.href = "dashboard.html";
+        }
+    });
+
+    // View button effect
+    $(".viewBtn").click(function(){
+        alert("Showing more décor details!");
+    });
+
+});
+
+images/img1.jpeg
+images/img2.jpeg
+images/img3.jpeg
+
